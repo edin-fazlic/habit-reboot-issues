@@ -17,6 +17,8 @@ HabitReboot includes the following pages:
 - Milestones list page
 - Milestone add/edit page
 
+![alt text](https://github.com/edin-fazlic/habit-reboot-issues/blob/master/habitRebootSiteMap.drawio.png "SiteMap")
+
 ### 4. Functionality
 #### 4.1. Home page https://github.com/edin-fazlic/habit-reboot-issues/issues/1
 Home page shows web app general information, like help and about, but more importantly allows creation of a habit.
