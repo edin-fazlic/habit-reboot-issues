@@ -69,14 +69,60 @@ The page includes the following navigations:
 - obvious navigation back to the milestones list page discarding any changes made
 - simple navigation to Home page
 
-### 5. Technical Requirements
+### 5. API documentation
+#### 5.1. API Endpoints
+| # | CRUD | Url Path | Request | Response | Description | Functionality |
+| - | - | - | - | - | - | - |
+| I.a | Create | /habit | HabitDto | HabitDto | Creates a new habit. | 4.1 |
+| I.b | Read | /habit/{uuid} | - | HabitDto | Returns details of a specific habit. | 4.2 |
+| II.a | Read | /log/habit/{habitUuid}/list | - | List LogDto | Returns logs for a specific habit. | 4.3 |
+| II.b | Create | /log/habit/{habitUuid} | LogDto | LogDto | Creates a new log entry. | 4.2 |
+| III.a | Read | /milestone/habit/{habitUuid}/list | - | List MilestoneDto | Returns milestones for a specific habit. | 4.4 |
+| III.b | Read | /milestone/{id} | - | MilestoneDto | Returns details of a specific milestone. | 4.5 |
+| III.c | Create | /milestone/habit/{habitUuid} | MilestoneDto | MilestoneDto | Creates a new milestone for a habit. | 4.5 |
+| III.d | Update | /milestone/habit/{habitUuid}/{id} | MilestoneDto | MilestoneDto | Updates an existing milestone. | 4.5 |
+| III.e | Delete | /milestone/{id} | - | - | Deletes a specific milestone. | 4.5 |
+
+#### 5.2. Data Transfer Objects
+```
+HabitDto
+{
+  id: number,
+  uuid: string,
+  title: string,
+  timeSpan: number
+}
+```
+
+```
+LogDto
+{
+  time: string,
+  reason: string
+}
+
+```
+
+```
+MilestoneDto
+{
+  id: number,
+  title: string,
+  color: string,
+  time: number,
+  reached: boolean
+}
+
+```
+
+### 6. Technical Requirements
 The HabitReboot is built using the following technologies:
 - Backend: Java, Spring, PostgreSQL https://github.com/edin-fazlic/habit-reboot-issues/issues/11 https://github.com/edin-fazlic/habit-reboot-issues/issues/13
 - Frontend: Angular https://github.com/edin-fazlic/habit-reboot-issues/issues/12
 
 The app Frontend/Backend is hosted on a Netlify/Heroku cloud server respectively.
 
-### 6. Out of scope
+### 7. Out of scope
 - Captcha https://github.com/edin-fazlic/habit-reboot-issues/issues/6  
 When creating habits, since non authorized user can do that, request user to confirm that they are not a robot.
 - Improved milestones https://github.com/edin-fazlic/habit-reboot-issues/issues/7  
